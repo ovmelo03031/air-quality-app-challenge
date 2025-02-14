@@ -1,0 +1,28 @@
+{
+  "name": "@repo/shared-constants",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "exports": {
+    "./parameter-info": {
+      "types": "./src/parameter-info/parameterInfo.ts",
+      "default": "./dist/parameter-info/parameterInfo.js"
+    },
+    "./src": {
+      "types": "./src/parameter-info/parameterInfo.ts",
+      "default": "./dist/parameter-info/parameterInfo.js"
+    },
+    "./types": {
+      "types": "./src/types/index.ts",
+      "default": "./dist/types/index.js"
+    },
+    ".": "./dist/index.js"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "*",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,76 @@
+export const VARIABLE_ASSOCIATION = {
+    "CO(GT)": "co",
+    "PT08.S1(CO)": "pt08S1",
+    "NMHC(GT)": "nmhc",
+    "C6H6(GT)": "benzene",
+    "PT08.S2(NMHC)": "pt08S2",
+    "NOx(GT)": "nox",
+    "PT08.S3(NOx)": "pt08S3",
+    "NO2(GT)": "no2",
+    "PT08.S4(NO2)": "pt08S4",
+    "PT08.S5(O3)": "pt08S5",
+    "T": "temperature",
+    "RH": "relative_humidity",
+    "AH": "absolute_humidity",
+} as const;
+
+export const PARAMETER_KEYS_WITHOUT_TH: string[] = [
+    "co",
+    "pt08S1",
+    "nmhc",
+    "benzene",
+    "pt08S2",
+    "nox",
+    "pt08S3",
+    "no2",
+    "pt08S4",
+    "pt08S5",
+] as const;
+
+export const PARAMETER_LABEL_KEY = {
+    co: "CO(GT)",
+    pt08S1: "PT08.S1(CO)",
+    nmhc: "NMHC(GT)",
+    benzene: "C6H6(GT)",
+    pt08S2: "PT08.S2(NMHC)",
+    nox: "NOx(GT)",
+    pt08S3: "PT08.S3(NOx)",
+    no2: "NO2(GT)",
+    pt08S4: "PT08.S4(NO2)",
+    pt08S5: "PT08.S5(O3)",
+    temperature: "T",
+    relative_humidity: "RH",
+    absolute_humidity: "AH",
+} as const;
+
+export const PARAMETER_LABELS = {
+    co: 'Carbon Monoxide (CO)',
+    pt08S1: 'PT08.S1 Sensor (CO)',
+    nmhc: 'NMHC',
+    benzene: 'Benzene',
+    pt08S2: 'PT08.S2 Sensor (NMHC)',
+    nox: 'NOx',
+    pt08S3: 'PT08.S3 Sensor (NOx)',
+    no2: 'NO₂',
+    pt08S4: 'PT08.S4 Sensor (NO₂)',
+    pt08S5: 'PT08.S5 Sensor (O₃)',
+    temperature: 'Temperature (°C)',
+    relative_humidity: 'Relative Humidity (%)',
+    absolute_humidity: 'Absolute Humidity (AH)',
+} as const;
+
+export const PARAMETER_DESCRIPTION = {
+    co: 'True hourly averaged concentration of Carbon Monoxide (CO) in mg/m³ (reference analyzer).',
+    pt08S1: 'Hourly averaged sensor response from PT08.S1 (tin oxide) targeting CO measurement.',
+    nmhc: 'True hourly averaged overall concentration of Non Methanic HydroCarbons (NMHC) in µg/m³ (reference analyzer).',
+    benzene: 'True hourly averaged concentration of Benzene in µg/m³ (reference analyzer).',
+    pt08S2: 'Hourly averaged sensor response from PT08.S2 (titania) targeting NMHC measurement.',
+    nox: 'True hourly averaged concentration of NOx in ppb (reference analyzer).',
+    pt08S3: 'Hourly averaged sensor response from PT08.S3 (tungsten oxide) targeting NOx measurement.',
+    no2: 'True hourly averaged concentration of NO₂ in µg/m³ (reference analyzer).',
+    pt08S4: 'Hourly averaged sensor response from PT08.S4 (tungsten oxide) targeting NO₂ measurement.',
+    pt08S5: 'Hourly averaged sensor response from PT08.S5 (indium oxide) targeting O₃ measurement.',
+    temperature: 'Hourly averaged temperature in °C.',
+    relative_humidity: 'Hourly averaged Relative Humidity in %.',
+    absolute_humidity: 'Hourly averaged Absolute Humidity (AH).',
+} as const; 
