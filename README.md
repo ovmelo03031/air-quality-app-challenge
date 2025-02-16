@@ -31,10 +31,6 @@ VITE_API_URL=http://localhost:3050
 ```bash
 # Start both API and client
 npm run dev
-
-# Or start individually
-npm run dev:api    # API only (port 3050)
-npm run dev:client # Client only (port 3000)
 ```
 
 Access:
