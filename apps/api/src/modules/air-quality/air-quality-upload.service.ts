@@ -20,7 +20,6 @@ export class AirQualityUploadService {
   async ingestCsvData(file: Express.Multer.File): Promise<void> {
     try {
       this.logger.log('Ingesting data from CSV file');
-      this.validateCsvFile(file);
       await this.getBatchOfDataFromCSVFile(file.path);
     } finally {
       await this.removeFile(file.path);
@@ -28,19 +27,6 @@ export class AirQualityUploadService {
   }
 
   //#region CSV Parsing
-
-  private validateCsvFile(file: Express.Multer.File) {
-    if (!file) {
-      throw new BadRequestException('Should send a file');
-    }
-
-    if ('text/csv' !== file.mimetype) {
-      throw new BadRequestException(
-        'The file should be a CSV file with text/csv mimetype',
-      );
-    }
-  }
-
   private parseCsvRow(row: { [key: string]: string }): AirQuality | null {
     const isEmpty = Object.values(row).every((value) => value.trim() === '');
     if (isEmpty) {
@@ -76,6 +62,7 @@ export class AirQualityUploadService {
 
   private getBatchOfDataFromCSVFile(filePath: string): Promise<void> {
     const records: AirQuality[] = [];
+    // Todo: Can implement a queue to handle multiple chunks of data or Bullmq to handle the queue / or Kafka to handle the queue
     return new Promise((resolve, reject) => {
       const stream = createReadStream(filePath).pipe(
         csvParser({ separator: ';' }),
