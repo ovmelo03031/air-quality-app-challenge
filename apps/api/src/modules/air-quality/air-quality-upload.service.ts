@@ -8,7 +8,6 @@ import * as csvParser from 'csv-parser';
 import { BATCH_SIZE } from '@helpers/constants';
 import { VARIABLE_ASSOCIATION } from '@repo/shared-constants/src';
 import { ValueOf } from '@models/interval-by-parameters';
-import { Transform } from '@nestjs/common/interfaces';
 
 @Injectable()
 export class AirQualityUploadService {

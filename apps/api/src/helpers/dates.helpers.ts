@@ -50,7 +50,7 @@ export function getCorrectedDateRange(
   endDate: Date | string,
 ): { startDate: Date; endDate: Date } {
   return {
-    startDate: dayjs(startDate).startOf('day').toDate(),
-    endDate: dayjs(endDate).endOf('day').toDate(),
+    startDate: dayjs(startDate).toDate(),
+    endDate: dayjs(endDate).toDate(),
   };
 }
